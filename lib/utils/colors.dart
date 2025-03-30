@@ -9,4 +9,6 @@ class CustomColor {
 
   static final Color white = Color(0xffFFFFFF);
 
+  static final Color dark = Color(0xFF212325);
+
 }
