@@ -39,9 +39,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  SvgPicture.asset(
-                    'assets/icons/arrow-left.svg',
-                    width: 32,
+                  InkWell(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: SvgPicture.asset(
+                      'assets/icons/arrow-left.svg',
+                      width: 32,
+                    ),
                   ),
                   Text(
                     "Sign Up",
