@@ -31,7 +31,7 @@ class InputFeildWidget extends StatefulWidget {
 }
 
 class _InputFeildWidgetState extends State<InputFeildWidget> {
-  bool isobscure = false;
+  bool isobscure = true;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -69,7 +69,7 @@ class _InputFeildWidgetState extends State<InputFeildWidget> {
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(
-            color: Colors.transparent,
+            color: Colors.red,
             width: 1,
           ),
         ),

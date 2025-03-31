@@ -1,5 +1,6 @@
 import 'package:cipherx_expense_app/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextButtonWidget extends StatelessWidget {
@@ -9,7 +10,7 @@ class TextButtonWidget extends StatelessWidget {
   final double? fontsize;
   final Color? bordercolor;
   final Color? textcolor;
-  final IconData? icon;
+  final String? icon;
   final double? iconsize;
   final bool isLoading;
 
@@ -41,11 +42,15 @@ class TextButtonWidget extends StatelessWidget {
                 color: CustomColor.white,
               ),
             )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                  child: Text(
+          : Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  (icon!= null)?
+                  SvgPicture.asset(icon!,height: 32,): SizedBox(),
+                  if(icon!=null)
+                  SizedBox(width: 4,),
+                  Text(
                     textAlign: TextAlign.center,
                     text,
                     style: TextStyle(
@@ -55,10 +60,8 @@ class TextButtonWidget extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                ),
-                // Icon(icon,
-                //     size: iconsize, color: )
-              ],
+                ],
+              ),
             ),
     );
   }

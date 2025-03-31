@@ -11,4 +11,6 @@ class CustomColor {
 
   static final Color dark = Color(0xFF212325);
 
+  static final Color border = Color(0xFFF1F1FA);
+
 }
