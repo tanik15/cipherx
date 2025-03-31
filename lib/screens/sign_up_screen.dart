@@ -75,13 +75,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter an name';
-                      } 
-                      return null;
-                    },
-                    onchanged: (p0) {
-                      if(p0.isNotEmpty ){
-                        
                       }
+                      return null;
                     },
                   ),
                   SizedBox(
@@ -140,9 +135,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Expanded(
                         child: RichText(
                           text: TextSpan(
-                            style: TextStyle(fontSize: 14.0, color: Colors.black),
+                            style:
+                                TextStyle(fontSize: 14.0, color: Colors.black),
                             children: [
-                              TextSpan(text: 'By signing up, you agree to the '),
+                              TextSpan(
+                                  text: 'By signing up, you agree to the '),
                               TextSpan(
                                 text: 'Terms of Service',
                                 style: TextStyle(
@@ -199,14 +196,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     height: 16,
                   ),
-                  TextButtonWidget(
-                    textcolor: CustomColor.dark,
-                    bordercolor: CustomColor.border,
-                    height: 55,
-                    text: "Sign Up with Google",
-                    color: CustomColor.white,
-                    fontsize: 16,
-                    icon: 'assets/icons/google.svg',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(),
+                        ),
+                      );
+                    },
+                    child: TextButtonWidget(
+                      textcolor: CustomColor.dark,
+                      bordercolor: CustomColor.border,
+                      height: 55,
+                      text: "Sign Up with Google",
+                      color: CustomColor.white,
+                      fontsize: 16,
+                      icon: 'assets/icons/google.svg',
+                    ),
                   ),
                   SizedBox(
                     height: 16,

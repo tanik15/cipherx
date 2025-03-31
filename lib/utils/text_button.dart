@@ -31,6 +31,7 @@ class TextButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height,
+      padding: EdgeInsets.symmetric(vertical: 4,horizontal: 12),
       decoration: BoxDecoration(
           border: Border.all(color: bordercolor!),
           borderRadius: BorderRadius.circular(16),
@@ -63,6 +64,7 @@ class TextButtonWidget extends StatelessWidget {
                 ],
               ),
             ),
+            
     );
   }
 }
