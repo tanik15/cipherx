@@ -3,6 +3,7 @@ import 'package:cipherx_expense_app/utils/expense_widget.dart';
 import 'package:cipherx_expense_app/utils/month_drop_down.dart';
 import 'package:cipherx_expense_app/widgets/today_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  final _key = GlobalKey<ExpandableFabState>();
 
   @override
   void initState() {
@@ -167,11 +169,88 @@ class _HomeScreenState extends State<HomeScreen>
                 TodayViewWidget(),
                 TodayViewWidget(),
                 TodayViewWidget(),
-                TodayViewWidget(),  ],
+                TodayViewWidget(),
+              ],
             ),
           ),
         ],
       ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        height: 70,
+        color: CustomColor.violet20,
+        notchMargin: 4.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Expanded(
+              child: InkWell(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Icon(Icons.add),
+                    Text("Income"),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: InkWell(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Icon(Icons.remove),
+                    Text("Expense"),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButtonLocation: ExpandableFab.location,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        shape: CircleBorder(),
+        backgroundColor: CustomColor.violet100,
+        child: Icon(Icons.home, size: 28, color: Colors.white),
+      ),
+      // floatingActionButton: ExpandableFab(
+      //   key: _key,
+      //   type: ExpandableFabType.fan,
+      //   pos: ExpandableFabPos.center,
+      //   fanAngle: 180,
+      //   childrenAnimation: ExpandableFabAnimation.rotate,
+      //   distance: 70,
+      //   overlayStyle: ExpandableFabOverlayStyle(
+      //     color: Colors.white.withOpacity(0.8),
+      //   ),
+      //   children: const [
+      //     Column(
+      //       children: [
+      //         FloatingActionButton.small(
+      //           heroTag: null,
+      //           onPressed: null,
+      //           child: Icon(Icons.remove_circle_outline_outlined),
+      //         ),
+      //         SizedBox(height: 10),
+      //         Text('Expense'),
+      //       ],
+      //     ),
+      //     Column(
+      //       children: [
+      //         FloatingActionButton.small(
+      //           heroTag: null,
+      //           onPressed: null,
+      //           child: Icon(Icons.add_circle_outline),
+      //         ),
+      //         SizedBox(height: 10),
+      //         Text('Income'),
+      //       ],
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
